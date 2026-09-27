@@ -19,7 +19,7 @@ The test:
 
 - Node.js installed.
 - A user account created manually at [Automation Exercise](https://www.automationexercise.com/).
-- The account credentials entered in `test_data/loginData.ts`.
+- A local `test_data/loginData.ts` file created from `test_data/loginData.example.ts` with your account credentials. The local credentials file is ignored by Git.
 
 
 
@@ -29,6 +29,8 @@ The test:
 npm install
 npx playwright install
 ```
+
+Copy `test_data/loginData.example.ts` to `test_data/loginData.ts`, then replace the placeholder values with your test account credentials.
 
 ## Run the Tests
 
@@ -65,7 +67,7 @@ npx playwright show-report
 ├── pages/
 │   └── LoginPage.ts       # Login page object and assertions
 ├── test_data/
-│   └── loginData.ts       # Test account credentials
+│   └── loginData.example.ts # Safe credentials template
 ├── tests/
 │   └── login.spec.ts      # Login test scenario
 ├── playwright.config.ts   # Playwright configuration and browser projects
@@ -73,9 +75,3 @@ npx playwright show-report
 └── README.md
 ```
 
-## Design Notes
-
-- The test uses Playwright's role-based locators where available.
-- Login interactions and the success assertion are kept in `LoginPage` using the Page Object Model.
-- The base URL is configured in `playwright.config.ts`.
-- Tests run in headed mode by default because `headless` is set to `false`.

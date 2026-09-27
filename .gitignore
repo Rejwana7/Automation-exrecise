@@ -11,6 +11,10 @@ node_modules/
 .env
 .env.*
 !.env.example
+/test_data/loginData.ts
+
+# Local demo recordings
+*.mp4
 
 # Local logs and build metadata
 *.log
@@ -18,4 +22,3 @@ node_modules/
 
 # OS/editor files
 .DS_Store
-
